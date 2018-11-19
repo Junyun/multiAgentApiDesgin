@@ -10,6 +10,7 @@
 
 ### 角色:
 
+- admin
 - agent
 
 ***
@@ -27,6 +28,151 @@
 | username | string | true | 当前代理用户名 |
 | password | string | true | sha256 |
 | role | string | true | 当前角色，example: "admin" \|\| "agent" |
+
+***
+
+### 响应说明
+
+- data
+    - token
+    - tokenExpired
+
+***
+
+### 响应举例
+
+    {
+        token: "",
+        tokenExpired:"2018-09-19 18:55:56"
+    }
+
+***
+
+## getAgentDelApprovalRecords
+
+***
+
+### 地址: /api/v1/general/getAgentDelApprovalRecords
+
+***
+
+### 角色:
+
+- admin agent审批后admin才可以看到进行审批
+- agent
+
+***
+
+### 权限:
+
+- read
+
+***
+
+### 参数
+
+| 参数名 | 类型 | 是否必须 | 说明 |
+| :-: | :-: | :-: | :-: |
+| token | string | true | 当前代理持有的token |
+| username | string | true | 当前代理用户名 |
+| role | string | true | 当前角色，example: "admin" \|\| "agent" |
+| attributes? | object | false | 需要获取设备的key-value 属性对，example:{del_agent_fid:"",parent_approval_status:""} |
+| offset | string | true | 起始位置 |
+| count | string | true | 总数 |
+
+***
+
+### 响应说明
+
+- data
+    - records
+    - totalCount
+    - msg
+    - pageInfo
+        - endCursor
+        - hasNextPage
+
+***
+
+### 响应举例
+
+    {
+            records: [
+                {
+                    _id:"",
+                    username:"",
+                    password:"",
+                    name:"",
+                    agent_name:"",
+                    sex:"",
+                    age:"",
+                    wx_open_id:"",
+                    wx_union_id:"",
+                    cellphone:"",
+                    telephone:"",
+                    email:""
+                },
+                {
+                    _id:"",
+                    username:"",
+                    password:"",
+                    name:"",
+                    agent_name:"",
+                    sex:"",
+                    age:"",
+                    wx_open_id:"",
+                    wx_union_id:"",
+                    cellphone:"",
+                    telephone:"",
+                    email:""
+                }
+            ]
+            ,
+            totalCount: 200,
+            pageInfo:{
+                endCursor: 5,
+                hasNextPage: true
+            }
+            ,
+            msg:{
+                error?: Error(),
+                api:"addAgents",
+                code:"000008",
+                content:"addAgents success."
+            }
+        }
+
+***
+
+## editAgentDelApprovalRecords
+
+***
+
+### 地址: /api/v1/general/editAgentDelApprovalRecords
+
+***
+
+### 角色:
+
+- admin agent审批后admin才可以看到进行审批
+- agent
+
+***
+
+### 权限:
+
+- read
+
+***
+
+### 参数
+
+| 参数名 | 类型 | 是否必须 | 说明 |
+| :-: | :-: | :-: | :-: |
+| token | string | true | 当前代理持有的token |
+| username | string | true | 当前代理用户名 |
+| role | string | true | 当前角色，example: "admin" \|\| "agent" |
+| recordsQueryAndEdit | array | true | 需要获取代理的key-value 属性对数组，example:\[{queryAttributes:{del_agent_fid:"agent/12345",parent_agent_fid:""},editAttributes:{parent_approval_status:""}}\] |
 
 ***
 
@@ -88,6 +234,7 @@
 - data
     - agents
     - totalCount
+    - msg
     - pageInfo
         - endCursor
         - hasNextPage
@@ -132,6 +279,13 @@
         pageInfo:{
             endCursor: 5,
             hasNextPage: true
+        }
+        ,
+        msg:{
+            error?: Error(),
+            api:"addAgents",
+            code:"000008",
+            content:"addAgents success."
         }
     }
 
@@ -475,6 +629,13 @@
         pageInfo:{
             endCursor: 5,
             hasNextPage: true
+        }
+        ,
+        msg:{
+            error?: Error(),
+            api:"addAgents",
+            code:"000008",
+            content:"addAgents success."
         }
     }
 
