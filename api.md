@@ -48,11 +48,11 @@
 
 ***
 
-## getAgentDelApprovalRecords
+## getAgentApprovalRecords
 
 ***
 
-### 地址: /api/v1/general/getAgentDelApprovalRecords
+### 地址: /api/v1/general/getAgentApprovalRecords
 
 ***
 
@@ -144,11 +144,11 @@
 
 ***
 
-## editAgentDelApprovalRecords
+## editAgentApprovalRecords
 
 ***
 
-### 地址: /api/v1/general/editAgentDelApprovalRecords
+### 地址: /api/v1/general/editAgentApprovalRecords
 
 ***
 
