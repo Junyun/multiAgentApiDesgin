@@ -950,7 +950,7 @@
 
 ***
 
-### 地址: /api/v1/user/getDevices
+### 地址: /api/v1/user/getDevice
 
 ***
 
@@ -987,42 +987,22 @@
 ### 响应举例
 
     {
-        devices: [
-            {
-                _id:"",
-                username:"",
-                password:"",
-                name:"",
-                agent_name:"",
-                sex:"",
-                age:"",
-                wx_open_id:"",
-                wx_union_id:"",
-                cellphone:"",
-                telephone:"",
-                email:""
-            },
-            {
-                _id:"",
-                username:"",
-                password:"",
-                name:"",
-                agent_name:"",
-                sex:"",
-                age:"",
-                wx_open_id:"",
-                wx_union_id:"",
-                cellphone:"",
-                telephone:"",
-                email:""
-            }
-        ]
-        ,
-        totalCount: 200,
-        pageInfo:{
-            endCursor: 5,
-            hasNextPage: true
+        agent:{
+            _id:"",
+            username:"",
+            password:"",
+            name:"",
+            agent_name:"",
+            sex:"",
+            age:"",
+            wx_open_id:"",
+            wx_union_id:"",
+            cellphone:"",
+            telephone:"",
+            email:""
         }
+        name:"",
+        sn_code:"",
         ,
         msg:{
             error?: Error(),
