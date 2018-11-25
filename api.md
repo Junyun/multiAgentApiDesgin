@@ -1,5 +1,59 @@
 # General
 
+## replaceToken
+
+***
+
+### 地址: /api/v1/general/replaceToken
+
+***
+
+### 角色:
+
+- admin
+- agent
+
+***
+
+### 权限:
+
+- read
+
+***
+
+### 参数
+
+| 参数名 | 类型 | 是否必须 | 说明 |
+| :-: | :-: | :-: | :-: |
+| token | string | true | 当前代理持有的token |
+| username | string | true | 当前代理用户名 |
+
+***
+
+### 响应说明
+
+- data
+    - token
+    - tokenExpired
+    - msg
+
+***
+
+### 响应举例
+
+    {
+        token: "",
+        tokenExpired:"2018-09-19 18:55:56",
+        msg:{
+            error?: Error(),
+            api:"addAgents",
+            code:"000008",
+            content:"addAgents success."
+        }
+    }
+
+***
+
 ## login
 
 ***
@@ -557,7 +611,6 @@
 
 - admin 任意
 - agent 仅操作 agent_fid 为自己的
-- user 仅查看到代理信息
 
 ***
 
@@ -891,5 +944,92 @@
 
 ***
 
+# User
 
+## getDevices
 
+***
+
+### 地址: /api/v1/user/getDevices
+
+***
+
+### 角色:
+
+- user 仅查看到代理信息
+
+***
+
+### 权限:
+
+- read
+
+***
+
+### 参数
+
+| 参数名 | 类型 | 是否必须 | 说明 |
+| :-: | :-: | :-: | :-: |
+| sn_code | string | true |  |
+
+***
+
+### 响应说明
+
+- data
+    - agent
+    - name
+    - sn_code
+    - device_type
+
+***
+
+### 响应举例
+
+    {
+        devices: [
+            {
+                _id:"",
+                username:"",
+                password:"",
+                name:"",
+                agent_name:"",
+                sex:"",
+                age:"",
+                wx_open_id:"",
+                wx_union_id:"",
+                cellphone:"",
+                telephone:"",
+                email:""
+            },
+            {
+                _id:"",
+                username:"",
+                password:"",
+                name:"",
+                agent_name:"",
+                sex:"",
+                age:"",
+                wx_open_id:"",
+                wx_union_id:"",
+                cellphone:"",
+                telephone:"",
+                email:""
+            }
+        ]
+        ,
+        totalCount: 200,
+        pageInfo:{
+            endCursor: 5,
+            hasNextPage: true
+        }
+        ,
+        msg:{
+            error?: Error(),
+            api:"addAgents",
+            code:"000008",
+            content:"addAgents success."
+        }
+    }
+
+***
