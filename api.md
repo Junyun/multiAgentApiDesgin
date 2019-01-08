@@ -27,6 +27,7 @@
 | :-: | :-: | :-: | :-: |
 | token | string | true | 当前代理持有的token |
 | username | string | true | 当前代理用户名 |
+| role | string | true | 当前角色，example: "admin" \|\| "agent" |
 
 ***
 
@@ -97,7 +98,13 @@
 
     {
         token: "",
-        tokenExpired:"2018-09-19 18:55:56"
+        tokenExpired:"2018-09-19 18:55:56",
+        msg:{
+            error?: Error(),
+            api:"addAgents",
+            code:"000008",
+            content:"addAgents success."
+        }
     }
 
 ***
@@ -373,6 +380,7 @@
 | token | string | true | 代理持有的token |
 | username | string | true | 当前代理用户名 |
 | role | string | true | 当前角色，example: "admin" \|\| "agent" \|\| "user" |
+| parent_agent_fid | string | true | role==admin时为admin设置的父代理值;role==agent为默认当前代理用户名 |
 | agents | array | true | agent数组 |
 
 ***
@@ -457,7 +465,8 @@
 | token | string | true | 代理持有的token |
 | username | string | true | 当前代理用户名 |
 | role | string | true | 当前角色，example: "admin" \|\| "agent" \|\| "user" |
-| agentsQueryAndEdit | array | true | 需要获取代理的key-value 属性对数组，example:\[{queryAttributes:{_id:"agent/12345",username:"wukong"},editAttributes:{level:3,parent_agent_fid:"agent/12345"}}\] |
+| parent_agent_fid | string | true | role==admin时为admin设置的父代理值;role==agent为默认当前代理用户名 |
+| queryAndEdit | array | true | 需要获取代理的key-value 属性对数组，example:\[{queryAttributes:{_id:"agent/12345",username:"wukong"},editAttributes:{level:3,parent_agent_fid:"agent/12345"}}\] |
 
 ***
 
