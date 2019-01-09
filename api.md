@@ -284,7 +284,7 @@
 | token | string | true | 当前代理持有的token |
 | username | string | true | 当前代理用户名 |
 | role | string | true | 当前角色，example: "admin" \|\| "agent" \|\| "user" |
-| attributes? | object | false | 需要获取代理的key-value 属性对，example:{level:3,parent_agent_fid:"agent/12345"} |
+| attributes | object | true | 需要获取代理的key-value 属性对，example:{level:3,parent_agent_fid:"agent/12345"} |
 | offset | string | true | 起始位置 |
 | count | string | true | 总数 |
 
@@ -533,7 +533,7 @@
 ### 角色:
 
 - admin 任意
-- agent 仅操作 parent_agent_fid 为自己的
+- (暂时不开发)agent 仅操作 parent_agent_fid 为自己的
 
 ***
 
@@ -550,7 +550,8 @@
 | token | string | true | 当前代理持有的token |
 | username | string | true | 当前代理用户名 |
 | role | string | true | 当前角色，example: "admin" \|\| "agent" \|\| "user" |
-| agents | array | true | 需要获取代理的key-value 属性对，example:\[{_id:"agent/12345",username:"wukong"}\] |
+| parent_agent_fid | string | true | role==admin时为admin设置的被删除代理的子代理的新父代理值;role==agent为默认当前代理用户名 |
+| attributes | object | true | 需要获取代理的key-value 属性对，example:{level:3,parent_agent_fid:"agent/12345"} |
 
 ***
 
