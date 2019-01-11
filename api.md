@@ -981,6 +981,7 @@
 | 参数名 | 类型 | 是否必须 | 说明 |
 | :-: | :-: | :-: | :-: |
 | sn_code | string | true |  |
+| role | string | true | 当前角色，example: "admin" \|\| "agent" \|\| "user" |
 
 ***
 
